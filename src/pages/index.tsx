@@ -1,9 +1,9 @@
 import React from 'react';
 
-import logo from './logo.svg';
-import './App.css';
+import logo from '../shared/assets/logo.svg';
+import '../shared/assets/App.css';
 
-function App() {
+function Home() {
   return (
     <div className="App">
       <header className="App-header">
@@ -24,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;
