@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "solid-start dev",
     "build": "solid-start build",
-    "start": "solid-start start"
+    "start": "solid-start start",
+    "init": "npm i --legacy-peer-deps"
   },
   "type": "module",
   "devDependencies": {
@@ -14,7 +15,7 @@
     "vite": "^4.2.1"
   },
   "dependencies": {
-    "@auth/core": "0.5.1",
+    "@auth/core": "0.2.2",
     "@auth/solid-start": "^0.1.1",
     "@solidjs/meta": "^0.28.4",
     "@solidjs/router": "0.8.2",
