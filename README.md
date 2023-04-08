@@ -1,6 +1,6 @@
-# SolidStart + AuthJS
+# SolidStart
 
-Everything you need to build an [AuthJS](https://authjs.dev/) authenticated Solid project, powered by [`solid-start`](https://start.solidjs.com);
+Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
 
 ## Creating a project
 

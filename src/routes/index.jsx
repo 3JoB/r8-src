@@ -1,41 +1,18 @@
-import { getSession } from "@auth/solid-start";
-import { signIn } from "@auth/solid-start/client";
-import { createSignal, onCleanup, Show } from "solid-js";
-import { Navigate, useRouteData } from "solid-start";
-import { createServerData$ } from "solid-start/server";
-import { authOptions } from "./api/auth/[...solidauth]";
-export const routeData = () => {
-  return createServerData$(async (_, event) => {
-    const session = await getSession(event.request, authOptions);
-    return {
-      session: session,
-    };
-  });
-};
+import { Title } from "solid-start";
+import Counter from "~/components/Counter";
 export default function Home() {
-  const session = useRouteData();
-  const [redirectIn, setRedirectIn] = createSignal(3);
-  const int = setInterval(() => {
-    setRedirectIn((prev) => prev - 1);
-  }, 1000);
-  onCleanup(() => clearInterval(int));
   return (
     <main>
-      <h1>Home</h1>
-      <Show
-        when={session()?.session}
-        fallback={
-          <>
-            <span>You are not signed in.</span>
-            <button onClick={() => signIn("discord")}>Sign In</button>
-          </>
-        }
-      >
-        <span>Redirecting to protected page in {redirectIn()} seconds...</span>
-        <Show when={redirectIn() <= 0}>
-          <Navigate href="/protected" />
-        </Show>
-      </Show>
+      <Title>Hello World</Title>
+      <h1>Hello world!</h1>
+      <Counter />
+      <p>
+        Visit{" "}
+        <a href="https://start.solidjs.com" target="_blank">
+          start.solidjs.com
+        </a>{" "}
+        to learn how to build SolidStart apps.
+      </p>
     </main>
   );
 }
